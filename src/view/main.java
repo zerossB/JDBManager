@@ -132,6 +132,7 @@ public class main extends javax.swing.JFrame {
         });
 
         epSQL.setEditable(true);
+        epSQL.setEnabled(true);
         bSQL.setEnabled(true);
 
         spArvore.setViewportView(jTree);
@@ -144,11 +145,14 @@ public class main extends javax.swing.JFrame {
     private void closeConnection() {
         if (this.connection != null) {
             if (javax.swing.JOptionPane.showConfirmDialog(this,
-                    "Deseja Encerrar Conexão com Banco?")
+                    "Want close Connection with Database?", "Close Connection?",
+                    javax.swing.JOptionPane.OK_CANCEL_OPTION)
                     == javax.swing.JOptionPane.OK_OPTION) {
                 try {
                     this.connection.close();
+                    epSQL.setText("");
                     epSQL.setEditable(false);
+                    epSQL.setEnabled(false);
                     bSQL.setEnabled(false);
                     pArvore.removeAll();
                     pResultados.removeAll();
@@ -246,7 +250,7 @@ public class main extends javax.swing.JFrame {
         jScrollPane2.setViewportView(epSQL);
 
         bSQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock_data-new-sql-query-16.png"))); // NOI18N
-        bSQL.setText("Executar");
+        bSQL.setText("Execute");
         bSQL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bSQLActionPerformed(evt);
@@ -353,7 +357,7 @@ public class main extends javax.swing.JFrame {
             dbc.loadVectors(epSQL.getText());
             spTable.setViewportView(new javax.swing.JTable(dbc.getRows(), dbc.getColums()));
         } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "Digite algo!");
+            javax.swing.JOptionPane.showMessageDialog(this, "Type something!");
         }
     }//GEN-LAST:event_bSQLActionPerformed
 

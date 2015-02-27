@@ -228,10 +228,10 @@ public class ConnDB extends javax.swing.JDialog {
         try {
             access = new controller.DBAccess(a);
             if (access.getConnection() != null) {
-                javax.swing.JOptionPane.showMessageDialog(this, "Conectado!");
+                javax.swing.JOptionPane.showMessageDialog(this, "Connected!");
                 this.dispose();
             } else {
-                javax.swing.JOptionPane.showMessageDialog(this, "Verifique os campos e tente novamente");
+                javax.swing.JOptionPane.showMessageDialog(this, "Please check the fields and try again");
             }
         } catch (ClassNotFoundException ex) {
             javax.swing.JOptionPane.showMessageDialog(null,
