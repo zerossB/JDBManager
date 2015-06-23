@@ -76,7 +76,7 @@ public class main extends javax.swing.JFrame {
         jTree.treeDidChange();
         jTree.collapseRow(0);
         jTree.expandRow(0);
-
+        
         jTree.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -197,8 +197,11 @@ public class main extends javax.swing.JFrame {
         spTable = new javax.swing.JScrollPane();
         tResult = new javax.swing.JTable();
         jMB = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmFile = new javax.swing.JMenu();
+        jmAddCon = new javax.swing.JMenuItem();
+        jmCloseConn = new javax.swing.JMenuItem();
+        jmAbout = new javax.swing.JMenu();
+        jmBAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("JDBManager");
@@ -301,18 +304,38 @@ public class main extends javax.swing.JFrame {
 
         jMB.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jMenu2.setText("About");
+        jmFile.setText("File");
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/information.png"))); // NOI18N
-        jMenuItem1.setText("JDBManager");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jmAddCon.setText("New Connection");
+        jmAddCon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jmAddConActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jmFile.add(jmAddCon);
 
-        jMB.add(jMenu2);
+        jmCloseConn.setText("Close Connection");
+        jmCloseConn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmCloseConnActionPerformed(evt);
+            }
+        });
+        jmFile.add(jmCloseConn);
+
+        jMB.add(jmFile);
+
+        jmAbout.setText("About");
+
+        jmBAbout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/information.png"))); // NOI18N
+        jmBAbout.setText("JDBManager");
+        jmBAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmBAboutActionPerformed(evt);
+            }
+        });
+        jmAbout.add(jmBAbout);
+
+        jMB.add(jmAbout);
 
         setJMenuBar(jMB);
 
@@ -343,7 +366,11 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_bNewConActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        closeConnection();
+        if(this.connection != null){
+            closeConnection();
+        }else{
+            System.exit(0);
+        }
     }//GEN-LAST:event_formWindowClosing
 
     private void bCloseConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCloseConActionPerformed
@@ -361,9 +388,17 @@ public class main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_bSQLActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmBAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmBAboutActionPerformed
         new about(this);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jmBAboutActionPerformed
+
+    private void jmAddConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmAddConActionPerformed
+        bNewCon.doClick();
+    }//GEN-LAST:event_jmAddConActionPerformed
+
+    private void jmCloseConnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCloseConnActionPerformed
+        bCloseCon.doClick();
+    }//GEN-LAST:event_jmCloseConnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bCloseCon;
@@ -374,11 +409,14 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JSplitPane jDividerGui;
     private javax.swing.JToolBar jMAction;
     private javax.swing.JMenuBar jMB;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JMenu jmAbout;
+    private javax.swing.JMenuItem jmAddCon;
+    private javax.swing.JMenuItem jmBAbout;
+    private javax.swing.JMenuItem jmCloseConn;
+    private javax.swing.JMenu jmFile;
     private javax.swing.JPanel pArvore;
     private javax.swing.JPanel pResultados;
     private javax.swing.JScrollPane spArvore;

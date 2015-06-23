@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  */
 public class Splash extends javax.swing.JWindow {
     //Duração da SplashScreen
-    private int duration;
+    private final int duration;
     
     /**
      * Construtor

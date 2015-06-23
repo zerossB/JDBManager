@@ -90,6 +90,7 @@ public class about extends javax.swing.JDialog {
 
         jLabel2.setForeground(new java.awt.Color(102, 102, 255));
         jLabel2.setText("zerossB - Github");
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/stock_calc-accept-16.png"))); // NOI18N
         jButton1.setText("Close");

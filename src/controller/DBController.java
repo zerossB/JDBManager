@@ -105,7 +105,7 @@ public class DBController {
             String tableName = "";
             javax.swing.tree.DefaultMutableTreeNode tableNode
                     = new javax.swing.tree.DefaultMutableTreeNode(a.getBanco());
-
+            
             while (rs.next()) {
                 String name = rs.getString(1);
                 if (tableName.compareTo(name) != 0) {

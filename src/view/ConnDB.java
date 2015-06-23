@@ -36,6 +36,7 @@ public class ConnDB extends javax.swing.JDialog {
 
     /**
      * Creates new form ConnDB
+     * @param parent
      */
     public ConnDB(java.awt.Frame parent) {
         super(parent, true);
@@ -233,12 +234,7 @@ public class ConnDB extends javax.swing.JDialog {
             } else {
                 javax.swing.JOptionPane.showMessageDialog(this, "Please check the fields and try again");
             }
-        } catch (ClassNotFoundException ex) {
-            javax.swing.JOptionPane.showMessageDialog(null,
-                    ex.getMessage(),
-                    "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);
-            Logger.getLogger(ConnDB.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             javax.swing.JOptionPane.showMessageDialog(null,
                     ex.getMessage(),
                     "Aviso", javax.swing.JOptionPane.ERROR_MESSAGE);

@@ -29,6 +29,9 @@ public class error extends javax.swing.JDialog {
     
     /**
      * Classe Construtor
+     * @param parent
+     * @param head
+     * @param mensage
      */
     public error(java.awt.Frame parent, String head, String mensage) {
         super(parent, true);
