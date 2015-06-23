@@ -2,7 +2,8 @@
 JDBManager is a database manager which shows all the tables in the database, facilitating handling them without getting spending hours of programming or even using SQL directly in the bank.
 
 ##Download
-Here --> [Download] <-- Here
+[Download] <-- Here
+[Source] <-- Source of JDBManager (Netbeans project)
 
 ##Database Supported
   - [Apache Derby]
@@ -40,5 +41,6 @@ Here --> [Download] <-- Here
 [SoLUC - Software Livre Unesp CTA]:https://sites.google.com/site/projetosoluc/
 [Apache Derby]:http://db.apache.org/derby/
 [GNU-GPL]:http://www.gnu.org/copyleft/gpl.html
-[Download]:https://github.com/zerossB/JDBManager/blob/master/dist/JDBManager.rar?raw=true
+[Download]:https://github.com/zerossB/JDBManager/blob/master/dist/JDBManagerJar.rar?raw=true
+[Source]:https://github.com/zerossB/JDBManager/blob/master/dist/JDBManager.rar?raw=true
 [Java]:http://java.com/pt_BR/download/installed8.jsp
