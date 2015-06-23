@@ -9,11 +9,12 @@ Here --> [Download] <-- Here
 
 ##Features
   - Easy Handling
-  - portable
+  - Portable
   - No need to know SQL (just the basics)
+  - CRUD Only (More options in other updates)
 
 ##Installation
-  - Java 1.7 or higher
+  - [Java] 1.7 or higher
   - [Apache Derby]
 
 ##Directory Structure
@@ -40,3 +41,4 @@ Here --> [Download] <-- Here
 [Apache Derby]:http://db.apache.org/derby/
 [GNU-GPL]:http://www.gnu.org/copyleft/gpl.html
 [Download]:https://github.com/zerossB/JDBManager/blob/master/dist/JDBManager.rar?raw=true
+[Java]:http://java.com/pt_BR/download/installed8.jsp
